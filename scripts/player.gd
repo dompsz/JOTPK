@@ -1,18 +1,15 @@
 extends CharacterBody2D
 @export var bullet : PackedScene = load("res://scenes/bullet.tscn")
-var mainScene = load("res://scenes/main.tscn")
 
-const SPEED = 100.0
+const SPEED = 85
 @onready var timer = get_node("AttackSpeedTimer")
-var attack_speed = 0.3
+var attack_speed = 0.5
 var can_shoot = true
 var vector = Vector2(0,0)
 
 func _ready():
 	timer.set_wait_time(attack_speed)
-	#timer.set_one_shot(true)
 	timer.timeout.connect(gun_cooldown)
-	#add_child(timer)
 
 #gun cooldown
 func gun_cooldown():
@@ -78,3 +75,8 @@ func shoot():
 	timer.start()
 	vector.x = 0
 	vector.y = 0
+
+#mob detection
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("mobs"):
+		queue_free()
