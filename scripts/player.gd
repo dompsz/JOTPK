@@ -1,5 +1,8 @@
 extends CharacterBody2D
 @export var bullet : PackedScene = load("res://scenes/bullet.tscn")
+@onready var body = $Body
+@onready var legs = $Legs
+
 
 const SPEED = 85
 @onready var timer = get_node("AttackSpeedTimer")
@@ -21,6 +24,11 @@ func _physics_process(delta):
 	var direction_h = Input.get_axis("MoveLeft", "MoveRight")
 	if direction_h:
 		velocity.x = direction_h * SPEED
+		legs.play("walk")
+		if velocity.x > 1:
+			body.play("right")
+		else:
+			body.play("left")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -28,9 +36,19 @@ func _physics_process(delta):
 	var direction_v = Input.get_axis("MoveUp", "MoveDown")
 	if direction_v:
 		velocity.y = direction_v * SPEED
+		legs.play("walk")
+		if velocity.y > 1:
+			body.play("down")
+		else:
+			body.play("up")
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-
+	
+#reset movement animation
+	if velocity.x == 0 && velocity.y == 0:
+		body.play("idle")
+		legs.play("idle")
+		
 #Shooting input detection
 	if (Input.is_action_pressed("ShootUp") && Input.is_action_pressed("ShootLeft")) && can_shoot:
 		vector.x = -1
