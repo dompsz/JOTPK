@@ -7,5 +7,5 @@ script = ExtResource("1_lu0pr")
 
 [node name="respawn_timer" type="Timer" parent="."]
 process_mode = 1
-wait_time = 1.5
+wait_time = 3.0
 one_shot = true

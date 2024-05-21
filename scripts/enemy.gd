@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var player = %Player
+@onready var player = $"../Player"
 @onready var sprite_2d = $EnemySprite
 @onready var collision_shape_2d = $Collision
 @onready var area_2d = $Area2D
@@ -9,10 +9,8 @@ var alive : bool = true
 const speed = 75
 var vector := Vector2(128, 128)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
-	#print(get_node_or_null("../%player"))
-	#todo: fix crash on player death caused by below ifs
 	#follow if alive
 	if alive == true:
 		#wipe enemies on player death

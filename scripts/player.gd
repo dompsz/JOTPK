@@ -2,6 +2,7 @@ extends CharacterBody2D
 @export var bullet : PackedScene = load("res://scenes/bullet.tscn")
 @onready var body = $Body
 @onready var legs = $Legs
+@onready var spawners_controller = $"../spawners_controller"
 
 
 const SPEED = 85
@@ -18,7 +19,7 @@ func _ready():
 func gun_cooldown():
 	can_shoot = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 
 #horizontal movement
 	var direction_h = Input.get_axis("MoveLeft", "MoveRight")
@@ -98,3 +99,4 @@ func shoot():
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("mobs"):
 		queue_free()
+		spawners_controller.stop()

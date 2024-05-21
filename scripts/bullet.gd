@@ -5,7 +5,7 @@ var direction = Vector2.ZERO
 
 func _physics_process(delta):
 	#shoot
-	var collision_info = move_and_collide(velocity.normalized() 
+	var _collision_info = move_and_collide(velocity.normalized() 
 	* speed * delta)
 	
 func _on_area_2d_area_entered(area):
