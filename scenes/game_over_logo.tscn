@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c45ase30fw4e"]
+
+[ext_resource type="Texture2D" uid="uid://b1jb30f1ds5cb" path="res://assets/game_over.png" id="1_i3gvw"]
+
+[node name="GameOverLogo" type="Sprite2D"]
+light_mask = 0
+position = Vector2(128, 124)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_i3gvw")

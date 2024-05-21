@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bc2ltlhtyjky"]
+[gd_scene load_steps=10 format=3 uid="uid://bc2ltlhtyjky"]
 
 [ext_resource type="PackedScene" uid="uid://cs84ldyf76xov" path="res://scenes/player.tscn" id="1_jldpl"]
 [ext_resource type="Texture2D" uid="uid://dktb8ovyxfh70" path="res://assets/JOTPK_tilemap_env.png" id="3_j6cmp"]
 [ext_resource type="PackedScene" uid="uid://b8l7nekb8c3rk" path="res://scenes/spawner.tscn" id="4_n6i2a"]
 [ext_resource type="PackedScene" uid="uid://diapyyoorlm3g" path="res://scenes/spawners_controller.tscn" id="4_qg2q2"]
+[ext_resource type="PackedScene" uid="uid://c45ase30fw4e" path="res://scenes/game_over_logo.tscn" id="5_dw5nl"]
+[ext_resource type="Script" path="res://scripts/game_over_logo.gd" id="6_b6x8y"]
 
 [sub_resource type="GDScript" id="GDScript_e53hw"]
 script/source = "extends Node2D
@@ -105,3 +107,8 @@ position = Vector2(136, 248)
 
 [node name="spawner12" parent="spawners" instance=ExtResource("4_n6i2a")]
 position = Vector2(119, 248)
+
+[node name="GameOverLogo" parent="." instance=ExtResource("5_dw5nl")]
+visible = false
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_b6x8y")

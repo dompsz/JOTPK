@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var body = $Body
 @onready var legs = $Legs
 @onready var spawners_controller = $"../spawners_controller"
-
+@onready var game_over_logo = $"../GameOverLogo"
 
 const SPEED = 85
 @onready var timer = get_node("AttackSpeedTimer")
@@ -100,3 +100,4 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("mobs"):
 		queue_free()
 		spawners_controller.stop()
+		game_over_logo.show_logo()
