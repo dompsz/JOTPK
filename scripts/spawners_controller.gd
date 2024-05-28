@@ -16,7 +16,7 @@ extends Node2D
 @onready var main = $".."
 
 var timer_cooldown = 2.5
-var timer_min = 0.75
+var timer_min = 0.7
 var timer_decrease_speed = 0.05
 
 func _ready():
