@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var collision_shape_2d = $Collision
 @onready var area_2d = $Area2D
 @onready var timer = $Timer
+@onready var main = $".."
+
 
 var alive : bool = true
 const speed = 75
@@ -38,6 +40,8 @@ func death_animation():
 	sprite_2d.play("death")
 	timer.start()
 	timer.timeout.connect(suicide)
+	if player != null:
+		main.add_score()
 	
 #suicide
 func suicide():

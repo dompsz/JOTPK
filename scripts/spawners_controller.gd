@@ -13,6 +13,7 @@ extends Node2D
 @onready var s10 = $"../spawners/spawner10"
 @onready var s11 = $"../spawners/spawner11"
 @onready var s12 = $"../spawners/spawner12"
+@onready var main = $".."
 
 var timer_cooldown = 3
 var timer_min = 1
@@ -50,4 +51,5 @@ func spawn():
 	
 func stop():
 	timer.stop()
+	main.death()
 	
