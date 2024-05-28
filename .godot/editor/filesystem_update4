@@ -1,9 +1,0 @@
-res://scenes/main.tscn
-res://scripts/enemy.gd
-res://scripts/spawner.gd
-res://scenes/enemy.tscn
-res://scenes/spawners_controller.tscn
-res://scripts/spawners_controller.gd
-res://scripts/player.gd
-res://scripts/bullet.gd
-res://scripts/game_over_logo.gd
