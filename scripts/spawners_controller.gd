@@ -15,9 +15,9 @@ extends Node2D
 @onready var s12 = $"../spawners/spawner12"
 @onready var main = $".."
 
-var timer_cooldown = 3
-var timer_min = 1
-var timer_decrease_speed = 0.1
+var timer_cooldown = 2.5
+var timer_min = 0.75
+var timer_decrease_speed = 0.05
 
 func _ready():
 #timer setup
