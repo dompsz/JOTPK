@@ -106,16 +106,90 @@ visible = false
 scale = Vector2(0.5, 0.5)
 script = ExtResource("6_b6x8y")
 
-[node name="HighScoreLabel" type="Label" parent="."]
-process_mode = 3
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.0
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="HighScoreLabel" type="Label" parent="UI"]
+process_mode = 3
 texture_filter = 1
-offset_left = 160.0
-offset_right = 254.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.212
+anchor_top = -0.025
+anchor_right = 3.212
+anchor_bottom = -0.025
+offset_left = -47.48
+offset_top = -1.0
+offset_right = 63.52
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(1, 1, 0.227451, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "High Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.35
+anchor_right = 6.35
+offset_left = -92.0
+offset_top = -8.0
+offset_right = 1.99998
+offset_bottom = 22.0
 size_flags_horizontal = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 text = "Score: 0"
 horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Restart" type="Label" parent="UI"]
+texture_filter = 1
+offset_top = -4.0
+offset_right = 78.0
+offset_bottom = 20.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R - Restart"
+
+[node name="Walk" type="Label" parent="UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 6.4
+anchor_right = 0.025
+anchor_bottom = 6.4
+offset_top = -19.0
+offset_right = 95.0
+offset_bottom = 3.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Walk - WSAD"
+vertical_alignment = 2
+
+[node name="Shoot" type="Label" parent="UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.4
+anchor_top = 6.4
+anchor_right = 6.4
+anchor_bottom = 6.4
+offset_left = -107.0
+offset_top = -20.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Shoot - Arrows"
+horizontal_alignment = 2
+vertical_alignment = 2

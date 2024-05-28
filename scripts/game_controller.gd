@@ -1,6 +1,7 @@
 extends Node2D
-@onready var high_score_label = $HighScoreLabel
-@onready var score_label = $ScoreLabel
+@onready var high_score_label = $UI/HighScoreLabel
+@onready var score_label = $UI/ScoreLabel
+
 
 var save_data:SaveData
 var score:int = 0
@@ -16,6 +17,9 @@ func _process(_delta):
 	if game_over == false:
 		if Input.is_action_just_pressed("Start") && get_tree().paused == true :
 			play()
+			
+	if Input.is_action_just_pressed("Restart"):
+		get_tree().reload_current_scene()
 
 func play():
 	get_tree().paused = false
